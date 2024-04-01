@@ -1,0 +1,23 @@
+.restaurantList-container{
+    display: flex;
+    width: calc(25% + -12px);
+    border: 1px solid black;
+}
+
+.restaurant-container{
+    flex-basis: 100%;
+}
+
+.restaurant-container img{
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+
+}
+
+.info{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
