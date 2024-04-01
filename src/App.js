@@ -1,44 +1,29 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import axios from 'axios';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Error from "./Pages/Error/Error.js"
+import Home from "./Pages/Home/Home.js"
+import About from "./Pages/About/About.js"
+import Navbar from "./Components/Navbar/Navbar.js";
+// import RestaurantList from "./Components/RestaurantList/RestaurantList.js";
 
-const API_URL = process.env.REACT_APP_API_URL;
-const API_KEY = process.env.REACT_APP_API_KEY;
+
 
 function App() {
-  const [restaurants, setRestaurants] = useState([])
- 
+
+
   
-useEffect(()=>{
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(`${'https://corsproxy.io/?'}${API_URL}`, {
-        headers: {
-          'Authorization': `Bearer ${API_KEY}`,
-        },
-        params: {
-          "term": "restaurant",
-          "location":"10475"
-
-        }
-      });
-      setRestaurants(response.data.businesses)
-
-      // console.log(response.data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  fetchData()
-},[])
-
-console.log(restaurants)
-
-  return (
-    <div className="App">
-     hello world   
+  
+  return(
+    <div>
+      <Navbar/>
+      <Routes>
+        <Route path="*" element={<Error/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        {/* <Route path="/restaurantList"  element={<RestaurantList/>}/> */}
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
