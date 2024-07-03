@@ -1,0 +1,28 @@
+.navBar_container{
+    display: flex;
+    height: 75px;
+    width: 100%;
+    background-color: bisque;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_container{
+    display: flex;
+    margin-left: 50px;
+}
+
+.left_container div{
+    margin: 10px;
+}
+
+.account_btns{
+    display: flex;
+
+    margin-right: 50px;
+}
+
+.account_btns a{
+    margin: 10px;
+}
