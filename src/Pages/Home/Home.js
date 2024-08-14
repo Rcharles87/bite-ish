@@ -6,44 +6,49 @@ import axios from "axios";
 import Loading from "../Loading/Loading.js";
 import Error from "../Error/Error.js";
 import RestaurantList from "../../Components/RestaurantList/RestaurantList.js";
+import Landing from "../Landing/Landing.js";
 
-const API_URL = process.env.REACT_APP_API_URL;
-const API_KEY = process.env.REACT_APP_API_KEY;
+// const API_URL = process.env.REACT_APP_API_URL;
+// const API_KEY = process.env.REACT_APP_API_KEY;
 
 
 function Home() {
 
   const [restaurants, setRestaurants] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // need to change back to true when you change api 
   const [error, setError] = useState("");
   const [loggedIn, setLoggedIn] = useState(false)
+  // ${'https://corsproxy.io/?'}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios(`${"https://corsproxy.io/?"}${API_URL}`, {
-          headers: {
-            Authorization: `Bearer ${API_KEY}`,
-          },
-          params: {
-            term: "restaurant",
-            location: "10475",
-          },
-        });
-        console.log(error);
-        if (response.status === 200) {
-          setRestaurants(response.data.businesses);
-        } else {
-          throw new Error(error.toJSON());
-        }
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, [error]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios(`${'https://cors-anywhere.herokuapp.com/ '}${API_URL}`, {
+  //         headers: {
+  //           Authorization: `Bearer ${API_KEY}`,
+  //           // 'Access-Control-Allow-Origin': '*',
+  //           // Origin: "null",
+  //           // Accept: "application/json",
+  //         },
+  //         params: {
+  //           term: "restaurant",
+  //           location: "10475",
+  //         },
+  //       });
+  //       console.log(error);
+  //       if (response.status === 200) {
+  //         setRestaurants(response.data.businesses);
+  //       } else {
+  //         throw new Error(error.toJSON());
+  //       }
+  //     } catch (error) {
+  //       setError(error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [error]);
 
 
   // let restaurantList = restaurants.map((restaurant)=>{
@@ -59,7 +64,7 @@ function Home() {
       if(loggedIn){
         return <RestaurantList restaurants={restaurants}/>;
       }else{
-        return "landing page"
+        return <Landing/>
       }
     }
   };

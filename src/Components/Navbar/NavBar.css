@@ -3,7 +3,7 @@
     height: 75px;
     width: 100%;
     background-color: bisque;
-    position: fixed;
+    position: initial;
     justify-content: space-between;
     align-items: center;
 }

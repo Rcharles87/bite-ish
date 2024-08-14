@@ -1,0 +1,52 @@
+.landing-container {
+  display: grid;
+  place-items: center;
+}
+
+.hero-container {
+  /* background-color: #e8d7a446; */
+  background-image: url('../../../public/freepik-export-20240703141016lSLm.png');
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover ;
+  border: 1px solid green;
+  /* position: relative; */
+  
+}
+.hero-container h1{
+    justify-content: center;
+}
+
+/* .custom-shape-divider-bottom-1720007891 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+   border: 3px dotted aqua; 
+} */
+
+/* .custom-shape-divider-bottom-1720007891 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 171px;
+}
+
+.custom-shape-divider-bottom-1720007891 .shape-fill-1 {
+  fill: #bb3f02;
+}
+.custom-shape-divider-bottom-1720007891 .shape-fill-2 {
+  fill: #bb3f02;
+}
+.custom-shape-divider-bottom-1720007891 .shape-fill-3 {
+  fill: #bb3f02;
+} */
+
+.info-container {
+  border: 1px solid gold;
+}

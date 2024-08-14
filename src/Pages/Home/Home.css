@@ -1,5 +1,5 @@
 .home{
-    display: flex;
+    /* display: flex; */
     /* flex-wrap: wrap; */
     gap: 100px;
     overflow: scroll;
