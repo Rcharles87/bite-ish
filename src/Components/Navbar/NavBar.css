@@ -1,28 +1,51 @@
-.navBar_container{
-    display: flex;
-    height: 75px;
-    width: 100%;
-    background-color: bisque;
-    position: initial;
-    justify-content: space-between;
-    align-items: center;
+.navBar_container {
+  display: flex;
+  height: 75px;
+  width: 100%;
+  background-color: bisque;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.left_container{
-    display: flex;
-    margin-left: 50px;
+.left_container {
+  display: flex;
+  margin-left: 50px;
 }
 
-.left_container div{
-    margin: 10px;
+.left_container div {
+  margin: 10px;
 }
 
-.account_btns{
-    display: flex;
-
-    margin-right: 50px;
+.burger_container:hover {
+  height: 35px;
+  width: 35px;
+  border-radius: 30px;
+  background-color: white;
+  align-items: center;
+  
 }
 
-.account_btns a{
-    margin: 10px;
+.account_btns {
+  display: flex;
+  margin-right: 50px;
+}
+
+.account_btns a {
+  width: 55px;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 8px;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+}
+
+.account_btns a:nth-child(even) {
+  background-color: black;
+  color: white;
+}
+.account_btns a:hover {
+  opacity: 75%;
+  cursor: pointer;
 }
